@@ -1,29 +1,26 @@
 <template>
-  <div id="app">
-    <todoList msg="我要向子组件传递数据信息"></todoList>
-  </div>
+    <div id="app">
+        <todoList msg="我要向子组件传递数据信息"></todoList>
+    </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
-import TodoList from './components/TodoList'
+    import TodoList from './components/TodoList'
 
-export default {
-  name: 'app',
-  components: {
-    TodoList,
-    Hello
-  }
-}
+    export default {
+        name: 'app',
+        components: {
+            TodoList
+        }
+    }
 </script>
 
 <style>
-#app {
-  font-family: '微软雅黑';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #000;
-  margin-top: 60px;
-}
+    #app {
+        font-family: '微软雅黑';
+        -webkit-font-smoothing: antialiased;
+        text-align: center;
+        color: #000;
+        margin-top: 60px;
+    }
 </style>
