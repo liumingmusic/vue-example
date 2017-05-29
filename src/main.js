@@ -2,6 +2,7 @@ import Vue from 'vue';
 //路由相关
 import VueRouter from 'vue-router';
 import Routers from './router';
+import VueResource from 'vue-resource';
 //iview相关
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
@@ -13,6 +14,7 @@ import App from './app.vue';
 //开启配置
 Vue.use(VueRouter);
 Vue.use(iView);
+Vue.use(VueResource);
 
 // 路由配置
 const RouterConfig = {
