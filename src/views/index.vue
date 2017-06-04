@@ -1,10 +1,10 @@
 <template>
     <div class="index">
         <Row type="flex" justify="center">
-            <Col span="18">
-            <Table size="small" highlight-row border height="400" :columns="columnsName" :data="listData"></Table>
-            <div style="margin: 10px;overflow: hidden">
-                <div style="float: right;">
+            <Col span="23">
+            <Table size="small" highlight-row border :columns="columnsName" :data="listData"></Table>
+            <div class="pages-block">
+                <div class="pages-right">
                     <Page :total="40" :current="1" show-elevator show-sizer @on-change="doChangePage" @on-page-size-change="doPageSizeChange"></Page>
                 </div>
             </div>
@@ -179,16 +179,21 @@ export default {
 
 <style scoped lang="less">
 .index {
-    padding-top: 100px;
-}
-
-.lable-title {
-    text-align: center;
-}
-
-.update-model .row {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+    .lable-title {
+        text-align: center;
+    }
+    .pages-block {
+        margin: 10px;
+        overflow: hidden;
+        margin-top: 10px;
+        .pages-right {
+            float: right;
+        }
+    }
+    .update-model .row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
 }
 </style>

@@ -1,7 +1,6 @@
 import Vue from 'vue';
 //路由相关
 import VueRouter from 'vue-router';
-import Routers from './router';
 import VueResource from 'vue-resource';
 //iview相关
 import iView from 'iview';
@@ -9,6 +8,7 @@ import 'iview/dist/styles/iview.css';
 //基础公共类
 import Util from './libs/util';
 //组件
+import Routers from './router';
 import App from './app.vue';
 
 //开启配置
@@ -25,7 +25,7 @@ const router = new VueRouter(RouterConfig);
 
 //请求之前执行
 router.beforeEach((to, from, next) => {
-    //iview的加载进度条
+    //开始iview的加载进度条
     iView.LoadingBar.start();
     Util.title(to.meta.title);
     next();
@@ -33,6 +33,7 @@ router.beforeEach((to, from, next) => {
 
 //请求之后执行
 router.afterEach((to, from, next) => {
+    //结束iview的加载进度条
     iView.LoadingBar.finish();
     window.scrollTo(0, 0);
 });
