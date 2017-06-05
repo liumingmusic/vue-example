@@ -5,7 +5,7 @@
             <Table size="small" highlight-row border :columns="columnsName" :data="listData"></Table>
             <div class="pages-block">
                 <div class="pages-right">
-                    <Page :total="40" :current="1" show-elevator show-sizer @on-change="doChangePage" @on-page-size-change="doPageSizeChange"></Page>
+                    <Page :total="40" :current="1" show-elevator @on-change="doChangePage" @on-page-size-change="doPageSizeChange"></Page>
                 </div>
             </div>
             </Col>

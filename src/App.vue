@@ -1,64 +1,77 @@
 <template>
     <div class="layout">
-        <Menu mode="horizontal" theme="dark" active-name="1">
-            <div class="layout-logo"></div>
+        <!--顶部导航-->
+        <Menu mode="horizontal" theme="dark" active-name="ios-navigate">
+            <div class="layout-logo">
+                <Icon type="ios-cog" size="40"></Icon>
+            </div>
             <div class="layout-nav">
-                <Menu-item name="1">
+                <Menu-item name="ios-navigate">
                     <Icon type="ios-navigate"></Icon>
                     导航一
                 </Menu-item>
-                <Menu-item name="2">
+                <Menu-item name="ios-keypad">
                     <Icon type="ios-keypad"></Icon>
                     导航二
                 </Menu-item>
-                <Menu-item name="3">
+                <Menu-item name="ios-analytics">
                     <Icon type="ios-analytics"></Icon>
                     导航三
                 </Menu-item>
-                <Menu-item name="4">
+                <Menu-item name="ios-paper">
                     <Icon type="ios-paper"></Icon>
                     导航四
                 </Menu-item>
             </div>
         </Menu>
-        <Menu mode="horizontal" active-name="1">
-            <div class="layout-assistant">
-                <Menu-item name="1">二级导航</Menu-item>
-                <Menu-item name="2">二级导航</Menu-item>
-                <Menu-item name="3">二级导航</Menu-item>
-            </div>
-        </Menu>
+        <!--主体区域-->
         <div class="layout-content">
             <Row>
+                <!--左边菜单栏-->
                 <i-col span="5">
-                    <Menu active-name="1-2" width="auto" :open-names="['1','2','3']">
-                        <Submenu name="1">
+                    <Menu active-name="basic" width="auto" :open-names="['person','wrench','ios-gear']">
+                        <Submenu name="person">
                             <template slot="title">
-                                <Icon type="ios-navigate"></Icon>
-                                导航一
+                                <Icon type="person"></Icon>
+                                用户信息管理
                             </template>
-                            <Menu-item name="1-1">选项 1</Menu-item>
-                            <Menu-item name="1-2">选项 2</Menu-item>
-                            <Menu-item name="1-3">选项 3</Menu-item>
+                            <Menu-item name="basic">
+                                <router-link to="/basic">基本信息</router-link>
+                            </Menu-item>
+                            <Menu-item name="role">
+                                <router-link to="/role">角色信息</router-link>
+                            </Menu-item>
+                            <Menu-item name="oauth">
+                                <router-link to="/oauth">权限信息</router-link>
+                            </Menu-item>
                         </Submenu>
-                        <Submenu name="2">
+                        <Submenu name="wrench">
                             <template slot="title">
-                                <Icon type="ios-keypad"></Icon>
-                                导航二
+                                <Icon type="wrench"></Icon>
+                                机构管理
                             </template>
-                            <Menu-item name="2-1">选项 1</Menu-item>
-                            <Menu-item name="2-2">选项 2</Menu-item>
+                            <Menu-item name="properties">
+                                <router-link to="/properties">权限数配置</router-link>
+                            </Menu-item>
+                            <Menu-item name="classify">
+                                <router-link to="/classify">分级授权</router-link>
+                            </Menu-item>
                         </Submenu>
-                        <Submenu name="3">
+                        <Submenu name="ios-gear">
                             <template slot="title">
-                                <Icon type="ios-analytics"></Icon>
-                                导航三
+                                <Icon type="ios-gear"></Icon>
+                                模块管理
                             </template>
-                            <Menu-item name="3-1">选项 1</Menu-item>
-                            <Menu-item name="3-2">选项 2</Menu-item>
+                            <Menu-item name="roleBind">
+                                <router-link to="/roleBind">角色与机构绑定</router-link>
+                            </Menu-item>
+                            <Menu-item name="roleClassify">
+                                <router-link to="/roleClassify">角色分权</router-link>
+                            </Menu-item>
                         </Submenu>
                     </Menu>
                 </i-col>
+                <!--右边内容区域-->
                 <i-col span="19">
                     <!--主体内容区域-->
                     <div class="layout-content-main">
@@ -96,9 +109,11 @@ export default {
 .layout {
     background: #f5f7f9;
     .layout-logo {
+        display: flex;
+        justify-content: center;
+        margin-top: -4px;
         width: 100px;
         height: 30px;
-        background: #5b6270;
         border-radius: 3px;
         float: left;
         position: relative;
@@ -114,6 +129,17 @@ export default {
         .layout-content-main {
             padding: 10px;
         }
+        a[href] {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            color: #495060;
+        }
+    }
+    .ivu-menu-item-selected{
+        a[href] {
+            color: #39f;
+        }
     }
     .layout-nav {
         width: 420px;
@@ -125,6 +151,10 @@ export default {
         height: inherit;
     }
     .layout-copy {
+        position: absolute;
+        display: block;
+        width: 100%;
+        bottom: 0;
         text-align: center;
         padding: 10px 0 20px;
         color: #9ea7b4;
