@@ -5,6 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     entry: {
         main: './src/main',
+        // 将公共模块提取，生成名为`vendors`的chunk
         vendors: './src/vendors'
     },
     output: {

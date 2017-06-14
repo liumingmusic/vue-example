@@ -25,6 +25,7 @@ const router = new VueRouter(RouterConfig);
 
 //请求之前执行
 router.beforeEach((to, from, next) => {
+    // TODO 请求之前进行权限判断
     //开始iview的加载进度条
     iView.LoadingBar.start();
     Util.title(to.meta.title);
