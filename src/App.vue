@@ -75,13 +75,15 @@
                 <i-col span="19">
                     <!--主体内容区域-->
                     <div class="layout-content-main">
-                        <router-view></router-view>
+                        <transition>
+                            <router-view></router-view>
+                        </transition>
                     </div>
                 </i-col>
             </Row>
         </div>
         <div class="layout-copy">
-            2011-2016 &copy; TalkingData
+            2016-2017 &copy; TalkingData
         </div>
     </div>
 </template>
