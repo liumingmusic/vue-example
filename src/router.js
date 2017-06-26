@@ -5,7 +5,7 @@ const routers = [
     }, {
         path: '/basic',
         meta: {
-            title: '基本信息'
+            title: '模块管理-基本信息'
         },
         component: function (resolve) {
             require(['./views/basic.vue'], resolve);
@@ -13,20 +13,19 @@ const routers = [
     }, {
         path: '/role',
         meta: {
-            title: '角色信息'
+            title: '模块管理-角色信息'
         },
         component: function (resolve) {
             require(['./views/role.vue'], resolve);
         },
         beforeEnter: function (to, from, next) {
-            console.info(to);
-            console.info(from);
+            console.log("单独的请求拦截...");
             next();
         }
     }, {
         path: '/oauth',
         meta: {
-            title: '权限信息'
+            title: '模块管理-权限信息'
         },
         component: function (resolve) {
             require(['./views/oauth.vue'], resolve);
@@ -34,7 +33,7 @@ const routers = [
     }, {
         path: '/properties',
         meta: {
-            title: '权限数配置'
+            title: '模块管理-权限数配置'
         },
         component: function (resolve) {
             require(['./views/properties.vue'], resolve);
@@ -42,7 +41,7 @@ const routers = [
     }, {
         path: '/classify',
         meta: {
-            title: '分级授权'
+            title: '模块管理-分级授权'
         },
         component: function (resolve) {
             require(['./views/classify.vue'], resolve);
@@ -50,7 +49,7 @@ const routers = [
     }, {
         path: '/roleBind',
         meta: {
-            title: '角色绑定'
+            title: '模块管理-角色绑定'
         },
         component: function (resolve) {
             require(['./views/roleBind.vue'], resolve);
@@ -58,7 +57,7 @@ const routers = [
     }, {
         path: '/roleClassify',
         meta: {
-            title: '角色分权'
+            title: '模块管理-角色分权'
         },
         component: function (resolve) {
             require(['./views/roleClassify.vue'], resolve);

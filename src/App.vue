@@ -3,24 +3,24 @@
         <!--顶部导航-->
         <Menu mode="horizontal" theme="dark" active-name="ios-navigate">
             <div class="layout-logo">
-                <Icon type="ios-cog" size="40"></Icon>
+                信工门户系统后台管理
             </div>
             <div class="layout-nav">
                 <Menu-item name="ios-navigate">
                     <Icon type="ios-navigate"></Icon>
-                    导航一
+                    系统导航
                 </Menu-item>
                 <Menu-item name="ios-keypad">
                     <Icon type="ios-keypad"></Icon>
-                    导航二
+                    模块管理
                 </Menu-item>
                 <Menu-item name="ios-analytics">
                     <Icon type="ios-analytics"></Icon>
-                    导航三
+                    使用分析
                 </Menu-item>
                 <Menu-item name="ios-paper">
                     <Icon type="ios-paper"></Icon>
-                    导航四
+                    报表文案
                 </Menu-item>
             </div>
         </Menu>
@@ -75,6 +75,12 @@
                 <i-col span="19">
                     <!--主体内容区域-->
                     <div class="layout-content-main">
+                        <!--面包屑-->
+                        <Breadcrumb>
+                            <Breadcrumb-item>用户信息管理</Breadcrumb-item>
+                            <Breadcrumb-item>基本信息</Breadcrumb-item>
+                        </Breadcrumb>
+                        <!--具体的内容承载-->
                         <transition>
                             <router-view></router-view>
                         </transition>
@@ -83,7 +89,7 @@
             </Row>
         </div>
         <div class="layout-copy">
-            2016-2017 &copy; TalkingData
+            2017 &copy; liumm
         </div>
     </div>
 </template>
@@ -94,7 +100,7 @@ export default {
         return {}
     },
     mounted() {
-
+        
     },
     beforeDestroy() {
 
@@ -110,26 +116,35 @@ export default {
 
 .layout {
     background: #f5f7f9;
+    // logo样式控制
     .layout-logo {
         display: flex;
-        justify-content: center;
-        margin-top: -4px;
-        width: 100px;
-        height: 30px;
-        border-radius: 3px;
-        float: left;
-        position: relative;
         top: 15px;
         left: 20px;
+        position: relative;
+        float: left;
+        justify-content: center;
+        width: 204px;
+        height: 30px;
+        border-radius: 3px;
+        line-height: 30px;
+        font-size: 20px;
+        color: #fff;
+        font-weight: bold;
     }
+    // 布局容器承载
     .layout-content {
         min-height: 200px;
-        margin: 15px;
         overflow: hidden;
         background: #fff;
         border-radius: 4px;
         .layout-content-main {
-            padding: 10px;
+            padding: 10px 0;
+            // 导航面包屑样式
+            .ivu-breadcrumb {
+                margin-bottom: 10px;
+                margin-left: 20px;
+            }
         }
         a[href] {
             display: inline-block;
@@ -138,13 +153,13 @@ export default {
             color: #495060;
         }
     }
-    .ivu-menu-item-selected{
+    .ivu-menu-item-selected {
         a[href] {
             color: #39f;
         }
     }
     .layout-nav {
-        width: 420px;
+        width: 470px;
         margin: 0 auto;
     }
     .layout-assistant {

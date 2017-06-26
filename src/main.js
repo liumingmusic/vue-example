@@ -2,6 +2,7 @@ import Vue from 'vue';
 //路由相关
 import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
+import Vuex from 'vuex';
 //iview相关
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
@@ -15,10 +16,11 @@ import App from './app.vue';
 Vue.use(VueRouter);
 Vue.use(iView);
 Vue.use(VueResource);
+Vue.use(Vuex);
 
 // 路由配置
 const RouterConfig = {
-    mode: 'history',
+    mode: 'history', //HTML5 History 模式
     routes: Routers
 };
 const router = new VueRouter(RouterConfig);
