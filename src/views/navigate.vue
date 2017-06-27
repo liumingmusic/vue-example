@@ -1,6 +1,6 @@
 <template>
     <div class="index">
-        角色模块
+        首页导航界面
     </div>
 </template>
 

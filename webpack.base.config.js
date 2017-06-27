@@ -100,7 +100,7 @@ apiRouter.get('/findByPages', function (req, res) {
 //7、请求路径设置
 app.use('/api', apiRouter);
 //8、开启监听
-var server = app.listen(8080, function () {
+var server = app.listen(8081, function () {
     var host = server
         .address()
         .address;

@@ -36,7 +36,7 @@
 
 <script>
 //引入请求url公共的路径
-import Path from "../libs/path.js";
+import Path from "../../libs/path.js";
 
 export default {
     data() {

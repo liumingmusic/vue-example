@@ -1,6 +1,6 @@
 <template>
     <div class="index">
-        角色绑定
+        用户使用分析
     </div>
 </template>
 

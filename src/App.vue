@@ -7,86 +7,35 @@
             </div>
             <div class="layout-nav">
                 <Menu-item name="ios-navigate">
-                    <Icon type="ios-navigate"></Icon>
-                    系统导航
+                    <router-link to="/">
+                        <Icon type="ios-navigate"></Icon>
+                        系统导航
+                    </router-link>
                 </Menu-item>
                 <Menu-item name="ios-keypad">
-                    <Icon type="ios-keypad"></Icon>
-                    模块管理
+                    <router-link to="/module/basic">
+                        <Icon type="ios-keypad"></Icon>
+                        模块管理
+                    </router-link>
                 </Menu-item>
                 <Menu-item name="ios-analytics">
-                    <Icon type="ios-analytics"></Icon>
-                    使用分析
+                    <router-link to="/analysis">
+                        <Icon type="ios-analytics"></Icon>
+                        使用分析
+                    </router-link>
                 </Menu-item>
                 <Menu-item name="ios-paper">
-                    <Icon type="ios-paper"></Icon>
-                    报表文案
+                    <router-link to="/report">
+                        <Icon type="ios-paper"></Icon>
+                        报表文案
+                    </router-link>
                 </Menu-item>
             </div>
         </Menu>
         <!--主体区域-->
         <div class="layout-content">
-            <Row>
-                <!--左边菜单栏-->
-                <i-col span="5">
-                    <Menu active-name="basic" width="auto" :open-names="['person','wrench','ios-gear']">
-                        <Submenu name="person">
-                            <template slot="title">
-                                <Icon type="person"></Icon>
-                                用户信息管理
-                            </template>
-                            <Menu-item name="basic">
-                                <router-link to="/basic">基本信息</router-link>
-                            </Menu-item>
-                            <Menu-item name="role">
-                                <router-link to="/role">角色信息</router-link>
-                            </Menu-item>
-                            <Menu-item name="oauth">
-                                <router-link to="/oauth">权限信息</router-link>
-                            </Menu-item>
-                        </Submenu>
-                        <Submenu name="wrench">
-                            <template slot="title">
-                                <Icon type="wrench"></Icon>
-                                机构管理
-                            </template>
-                            <Menu-item name="properties">
-                                <router-link to="/properties">权限数配置</router-link>
-                            </Menu-item>
-                            <Menu-item name="classify">
-                                <router-link to="/classify">分级授权</router-link>
-                            </Menu-item>
-                        </Submenu>
-                        <Submenu name="ios-gear">
-                            <template slot="title">
-                                <Icon type="ios-gear"></Icon>
-                                模块管理
-                            </template>
-                            <Menu-item name="roleBind">
-                                <router-link to="/roleBind">角色与机构绑定</router-link>
-                            </Menu-item>
-                            <Menu-item name="roleClassify">
-                                <router-link to="/roleClassify">角色分权</router-link>
-                            </Menu-item>
-                        </Submenu>
-                    </Menu>
-                </i-col>
-                <!--右边内容区域-->
-                <i-col span="19">
-                    <!--主体内容区域-->
-                    <div class="layout-content-main">
-                        <!--面包屑-->
-                        <Breadcrumb>
-                            <Breadcrumb-item>用户信息管理</Breadcrumb-item>
-                            <Breadcrumb-item>基本信息</Breadcrumb-item>
-                        </Breadcrumb>
-                        <!--具体的内容承载-->
-                        <transition>
-                            <router-view></router-view>
-                        </transition>
-                    </div>
-                </i-col>
-            </Row>
+            <!--内容区域路由-->
+            <router-view></router-view>
         </div>
         <div class="layout-copy">
             2017 &copy; liumm
@@ -100,7 +49,7 @@ export default {
         return {}
     },
     mounted() {
-        
+
     },
     beforeDestroy() {
 
@@ -111,12 +60,11 @@ export default {
 }
 </script>
 
-<style scoped lang="less">
+<style lang="less">
 @import 'styles/common.css';
 
 .layout {
-    background: #f5f7f9;
-    // logo样式控制
+    background: #f5f7f9; // logo样式控制
     .layout-logo {
         display: flex;
         top: 15px;
@@ -131,16 +79,14 @@ export default {
         font-size: 20px;
         color: #fff;
         font-weight: bold;
-    }
-    // 布局容器承载
+    } // 布局容器承载
     .layout-content {
         min-height: 200px;
         overflow: hidden;
         background: #fff;
         border-radius: 4px;
         .layout-content-main {
-            padding: 10px 0;
-            // 导航面包屑样式
+            padding: 10px 0; // 导航面包屑样式
             .ivu-breadcrumb {
                 margin-bottom: 10px;
                 margin-left: 20px;
@@ -151,6 +97,9 @@ export default {
             width: 100%;
             height: 100%;
             color: #495060;
+        } // 容器的高度
+        .ivu-row {
+            min-height: calc(~"100% - 108px");
         }
     }
     .ivu-menu-item-selected {
@@ -176,5 +125,11 @@ export default {
         padding: 10px 0 20px;
         color: #9ea7b4;
     }
+}
+
+// 控制所有导航的链接样式
+a[href] {
+    color: #fff;
+    display: inline-block;
 }
 </style>
