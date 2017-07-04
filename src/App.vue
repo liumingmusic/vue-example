@@ -64,6 +64,7 @@ export default {
 @import 'styles/common.css';
 
 .layout {
+    min-width: 856px;
     background: #f5f7f9; // logo样式控制
     .layout-logo {
         display: flex;
@@ -99,7 +100,10 @@ export default {
             color: #495060;
         } // 容器的高度
         .ivu-row {
-            min-height: calc(~"100% - 108px");
+            min-height: calc(~"100vh - 108px");
+            ul.ivu-menu-vertical{
+                min-height: calc(~"100vh - 108px");
+            }
         }
     }
     .ivu-menu-item-selected {
